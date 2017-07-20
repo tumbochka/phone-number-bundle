@@ -149,6 +149,7 @@ class PhoneNumberType extends AbstractType
                 'error_bubbling' => false,
                 'country_choices' => array(),
                 'preferred_country_choices' => array(),
+                'country_placeholder' => null
             )
         );
 
