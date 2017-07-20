@@ -141,12 +141,14 @@ The phone number can be split into a country choice and phone number text fields
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('phone_number', PhoneNumberType::class, array('widget' => PhoneNumberType::WIDGET_COUNTRY_CHOICE, 'country_choices' => array('GB', 'JE', 'FR', 'US'), 'preferred_country_choices' => array('GB', 'JE')));
+        $builder->add('phone_number', PhoneNumberType::class, array('widget' => PhoneNumberType::WIDGET_COUNTRY_CHOICE, 'country_choices' => array('GB', 'JE', 'FR', 'US'), 'preferred_country_choices' => array('GB', 'JE'), 'country_placeholder' => 'Please select a country code'));
     }
 
 This produces the preferred choices of 'Jersey' and 'United Kingdom', and regular choices of 'France' and 'United States'.
 
 By default the `country_choices` is empty, which means all countries are included, as is `preferred_country_choices`.
+
+An optional parameter `country_placeholder` allows to add a placeholder (i.e. a special "empty" option) to the countries select widget.
 
 ### Validating phone numbers
 
